@@ -33,29 +33,31 @@ for letter in shortOfTwo:                  #counts the number of common letters 
         longOfTwo.remove(letter)           #removing already matched common letters to avoid repetative confused matching
 
 uncommon = len(name1)+len(name2)-(2*commonLetters)    #counting all the unmatched letters to start executing flames
-
 flames = ["F","L","A","M","E","S"]            
-
 flamesCount=0                                 #initializing a flame count which will increament for every loop in the upcomming while loop
 
-while(len(flames)>1):                         #running a loop till there is only one element left in flames list
-    for i in flames:
-        flamesCount+=1
-        if flamesCount%uncommon==0:
-            flames.remove(i)                  #removing the element that gets striked out in flames
+if uncommon == 0:
+    print("Warning! You have either entered the same name for both, or the names don't have uncommon letters. In this case you can't calculate flames. Try again")
+else:
+    while(len(flames)>1):                         #running a loop till there is only one element left in flames list
+        for i in flames:
+            flamesCount+=1
+            if flamesCount%uncommon==0:
+                flames.remove(i)                  #removing the element that gets striked out in flames
 
-result=flames[0]                              #getting the result of last element remaining in the flames list
+    result=flames[0]                              #getting the result of last element remaining in the flames list
 
-if result=="F":                                                #printing some output based on the results
-    print(name1," and ",name2," can be good friends.")
-elif result=="L":
-    print("OMG! ",name1," and ",name2," are meant for each other. Pickup some guts and ask him/her for a date.")
-elif result=="A":
-    print("Hey, ",name1," and ",name2," are affectionate towards each other.")
-elif result=="M":
-    print(name1," and ",name2,"can have a future together. Talk to him/her about this.")
-elif result=="E":
-    print("Sorry...the compatability between ",name1," and ",name2," is not so good. But you can give it a try.")
-elif result=="S":
-    print(name1," and ",name2," are like brother and sister.")
-else: print("There is an problem calculating your compatability...Please try again.")
+    if result=="F":                                                #printing some output based on the results
+        print(name1," and ",name2," can be good friends.")
+    elif result=="L":
+        print("OMG! ",name1," and ",name2," are meant for each other. Pickup some guts and ask him/her for a date.")
+    elif result=="A":
+        print("Hey, ",name1," and ",name2," are affectionate towards each other.")
+    elif result=="M":
+        print(name1," and ",name2,"can have a future together. Talk to him/her about this.")
+    elif result=="E":
+        print("Sorry...the compatability between ",name1," and ",name2," is not so good. But you can give it a try.")
+    elif result=="S":
+        print(name1," and ",name2," are like brother and sister.")
+    else: print("There is an problem calculating your compatability...Please try again.")
+
