@@ -1,0 +1,5 @@
+**Sample output**
+
+> Enter your name: lee
+> Enter your crush's name: jawahar
+> LEE and JAWAHAR can be good friends.
